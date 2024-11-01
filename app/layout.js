@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ToastContainer />
-        <div className="bg-[#F6F6F6]">
+        <div className="">
           <AppWrapper>
             {children}
           </AppWrapper>
