@@ -9,7 +9,7 @@ const Services = () => {
             <div className='flex justify-between w-[80%]'>
                 <div className='flex flex-col gap-2'>
                     <GrDeliver size={30} />
-                    <p className='text-[14px] w-[272px]'>Upgrade your style today and get FREE shipping on all orders! Don't miss out.</p>
+                    <p className='text-[14px] w-[272px]'>Upgrade your style today and get FREE shipping on all orders! Don&apos;t miss out.</p>
                 </div>
                 <div className='flex flex-col gap-2'>
                     <LuFileBadge2 size={30} />

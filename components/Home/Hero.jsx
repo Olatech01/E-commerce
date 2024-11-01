@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='flex justify-around items-center w-full bg-[#F6F6F6] pt-[2rem]'>
         <div>
             <h1 className='text-[16px] font-normal'>Classic Exclusive</h1>
-            <p className='text-[25px] font-semibold'>Women's collection</p>
+            <p className='text-[25px] font-semibold'>Women&apos;s collection</p>
             <p>UPTO 40% OFF</p>
         </div>
         <div className='bg-[url("/grade.svg")] bg-no-repeat bg-contain h-fit'>

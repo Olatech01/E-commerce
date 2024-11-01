@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import React from 'react';
 import { CiSettings, CiStar, CiShoppingCart } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 import { IoGridOutline, IoBeakerOutline } from "react-icons/io5";
@@ -41,7 +41,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             title: 'Settings',
             path: '/admin/settings'
         }
-    ]
+    ];
 
     return (
         <div className={`fixed top-0 left-0 h-screen sm:h-full sm:z-50 w-[308px] bg-[#FFFFFF] p-4 flex flex-col gap-[30px] overflow-y-auto
@@ -53,18 +53,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </div>
             <ul className='flex flex-col gap-[1rem] mt-3'>
                 {sidebar.map((item, index) => (
-                    <Link href={item.path}>
-                        <li key={index} className={`flex items-center cursor-pointer h-[40px] px-1 gap-2 ${pathname === item.path ? 'bg-[#F6F6F6] rounded-md' : 'text-gray-500'}`}>
-
+                    <Link href={item.path} key={index}>
+                        <li className={`flex items-center cursor-pointer h-[40px] px-1 gap-2 ${pathname === item.path ? 'bg-[#F6F6F6] rounded-md' : 'text-gray-500'}`}>
                             {item.icon}
                             <span>{item.title}</span>
                         </li>
                     </Link>
-
                 ))}
             </ul>
         </div>
-    )
+    );
 }
 
-export default Sidebar
+export default Sidebar;
