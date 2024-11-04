@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { MdMenu, MdClose } from "react-icons/md";
+import Link from 'next/link';
 
 
 
@@ -17,7 +18,9 @@ const Navbar = () => {
       <Image height={100} width={100} src={"/logo.svg"} />
       <ul className='flex gap-6 sm:hidden'>
         <li>Home</li>
-        <li>Categories</li>
+        <Link href={"/products"}>
+          <li>Products</li>
+        </Link>
         <li>About</li>
         <li>Contact Us</li>
       </ul>

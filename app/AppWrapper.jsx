@@ -10,7 +10,8 @@ const AppWrapper = ({ children }) => {
         "/auth/register",
         "/auth/login",
         "/admin",
-        "/admin/products"
+        "/admin/products",
+        "/admin/settings"
     ].includes(pathname);
 
     return (

@@ -1,10 +1,10 @@
-import Products from '@/components/Admin/Products/Products'
+import Settings from '@/components/Admin/Settings/Settings'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <Products />
+        <Settings />
     </div>
   )
 }

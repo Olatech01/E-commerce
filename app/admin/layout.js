@@ -3,9 +3,11 @@ import React from 'react'
 
 const layout = ({ children }) => {
   return (
-    <AdminLayout>
-      {children}
-    </AdminLayout>
+    <div className='bg-[#F6F6F6]'>
+      <AdminLayout>
+        {children}
+      </AdminLayout>
+    </div>
   )
 }
 
