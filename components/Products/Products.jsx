@@ -133,10 +133,10 @@ const Products = () => {
                     <div className="flex justify-between items-center">
                         <div>
                             {selectedCategory.length > 0 && (
-                                <div>
+                                <div className='flex flex-col gap-1'>
                                     <strong>Applied Filters:</strong>
                                     {selectedCategory.map((category) => (
-                                        <span key={category} className="inline-block mx-1 bg-gray-200 p-1 rounded">
+                                        <span key={category} className="mx-1 bg-gray-200 p-1 rounded grid grid-cols-2">
                                             {category}
                                         </span>
                                     ))}
