@@ -6,6 +6,15 @@ import AccountDetails from './AccountDetails';
 import Address from './Address';
 import Order from './Order';
 import Watchlist from './Watchlist';
+import { TiShoppingCart } from "react-icons/ti";
+import { CiHeart } from "react-icons/ci";
+import { TbTruckDelivery } from "react-icons/tb";
+import { IoKeyOutline } from "react-icons/io5";
+import { IoPersonOutline } from "react-icons/io5";
+
+
+
+
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("Order");
@@ -15,12 +24,11 @@ const Profile = () => {
     };
 
     const profile = [
-        { label: 'Order', icon: 'icon-order' },
-        { label: 'Watchlist', icon: 'icon-watchlist' },
-        { label: 'Address', icon: 'icon-address' },
-        { label: 'Password', icon: 'icon-password' },
-        { label: 'Account Details', icon: 'icon-account-details' },
-        // { label: 'Logout', icon: 'icon-logout' },
+        { label: 'Order', icon: <TiShoppingCart size={20}/> },
+        { label: 'Watchlist', icon: <CiHeart size={20}/> },
+        { label: 'Address', icon: <TbTruckDelivery size={20}/> },
+        { label: 'Password', icon: <IoKeyOutline size={20}/> },
+        { label: 'Account Details', icon: <IoPersonOutline size={20}/> },
     ];
     return (
         <div className="w-full flex items-center justify-center">
@@ -34,7 +42,7 @@ const Profile = () => {
                                 }`}
                         >
                             <span className="icon-box text-gray-500">
-                                <i className={item.icon}></i>
+                                {item.icon}
                             </span>
                             <span className={`text-[14px] ${activeTab === item.label ? 'font-semibold text-black' : 'text-gray-600'}`}>
                                 {item.label}
