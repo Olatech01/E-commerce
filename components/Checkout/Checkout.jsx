@@ -3,9 +3,10 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import SuccessPopUp from './SuccessPopUp';
 import { useRouter } from 'next/navigation';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const Checkout = () => {
-    const [isPaymentSection, setIsPaymentSection] = useState(false); 
+    const [isPaymentSection, setIsPaymentSection] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState('cashOnDelivery');
     const [paymentMethodDetails, setPaymentMethodDetails] = useState({
         cardNumber: '',
@@ -16,17 +17,20 @@ const Checkout = () => {
     });
     const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
     const [isPaymentFailed, setIsPaymentFailed] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter()
 
     const handleSuccess = () => {
+        setIsLoading(true); // Show loading icon
         setTimeout(() => {
-            setIsPaymentSuccessful(true);   
-        }, 3000)
+            setIsLoading(false); // Hide loading icon after 3 seconds
+            setIsPaymentSuccessful(true);
+        }, 3000);
         setTimeout(() => {
-            router.push("/products")
-        },7000)
-    }
+            router.push("/products");
+        }, 7000);
+    };
 
     const handlePaymentMethodChange = (e) => {
         setPaymentMethod(e.target.value);
@@ -186,7 +190,8 @@ const Checkout = () => {
 
                         <button
                             className="py-2 px-4 bg-black text-white font-semibold w-full"
-                            onClick={handleSuccess} 
+                            onClick={handleSuccess}
+                            disabled={isLoading} // Disable button when loading
                         >
                             Confirm Payment
                         </button>
@@ -195,6 +200,11 @@ const Checkout = () => {
 
 
             </div>
+            {isLoading && (
+                <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 bg-black">
+                    <AiOutlineLoading3Quarters className="text-white text-4xl animate-spin" />
+                </div>
+            )}
             {isPaymentSuccessful && <SuccessPopUp />}
         </div>
     );
