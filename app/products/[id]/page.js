@@ -5,6 +5,8 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { CiHeart } from "react-icons/ci";
 import { CiShare2 } from "react-icons/ci";
+import { CiStar } from 'react-icons/ci';
+import { FaStar } from 'react-icons/fa';
 
 
 
@@ -145,10 +147,10 @@ const Details = () => {
                             <div>
                                 <h2>4.2</h2>
                             </div>
-                            <div className='flex gap-2 justify-between w-full'>
+                            <div className='flex gap-2 justify-between w-full border-b py-2'>
                                 <button onClick={handleReview} className='border px-3 h-[35px] rounded-md'>Write a review</button>
-                                <select className='outline-none border-b py-2'>
-                                    <option>Select your rating</option>
+                                <select className='outline-none '>
+                                    <option>Sort By</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -156,12 +158,57 @@ const Details = () => {
                                     <option value="5">5</option>
                                 </select>
                             </div>
+                            <div className='flex flex-col gap-6 items-center'>
+                                <div className='flex justify-between w-full'>
+                                    <div className='flex flex-col gap-2'>
+                                        <h2 className='text-[14px] font-medium'>Emily Davis</h2>
+                                        <p className='text-[12px] font-normal'>1 Week ago</p>
+                                        <p className='text-[14px] font-normal'>This company always goes above and beyond to satisfy their customers.</p>
+                                    </div>
+                                    <div className='flex gap-2'>
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <CiStar />
+                                    </div>
+                                </div>
+                                <div className='flex justify-between w-full'>
+                                    <div className='flex flex-col gap-2'>
+                                        <h2 className='text-[14px] font-medium'>Emily Davis</h2>
+                                        <p className='text-[12px] font-normal'>1 Week ago</p>
+                                        <p className='text-[14px] font-normal'>This company always goes above and beyond to satisfy their customers.</p>
+                                    </div>
+                                    <div className='flex gap-2'>
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <CiStar />
+                                    </div>
+                                </div>
+                                <div className='flex justify-between w-full'>
+                                    <div className='flex flex-col gap-2'>
+                                        <h2 className='text-[14px] font-medium'>Emily Davis</h2>
+                                        <p className='text-[12px] font-normal'>1 Week ago</p>
+                                        <p className='text-[14px] font-normal'>This company always goes above and beyond to satisfy their customers.</p>
+                                    </div>
+                                    <div className='flex gap-2'>
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <CiStar />
+                                    </div>
+                                </div>
+                                <button className='py-2 px-5 rounded-md border'>Load more review</button>
+                            </div>
                         </div>
                     )}
                 </div>
             </div>
             {review && (
-                <ReviewPopUp onClose={handleClose}/>
+                <ReviewPopUp onClose={handleClose} />
             )}
         </div>
     )

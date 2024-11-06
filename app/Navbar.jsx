@@ -5,6 +5,8 @@ import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { MdMenu, MdClose } from "react-icons/md";
 import Link from 'next/link';
+import { TiShoppingCart } from "react-icons/ti";
+
 
 
 
@@ -16,8 +18,10 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between px-7 py-3'>
       <Image height={100} width={100} src={"/logo.svg"} />
-      <ul className='flex gap-6 sm:hidden'>
-        <li>Home</li>
+      <ul className='flex gap-6 sm:hidden text-[14px] font-medium'>
+        <Link href={"/"}>
+          <li>Home</li>
+        </Link>
         <Link href={"/products"}>
           <li>Products</li>
         </Link>
@@ -26,7 +30,9 @@ const Navbar = () => {
       </ul>
       <div className='flex gap-3 items-center'>
         <CiSearch size={25} />
-        <CiShoppingCart size={25} />
+        <Link href={"/carts"}>
+          <TiShoppingCart size={25} />
+        </Link>
         <CgProfile size={25} />
       </div>
       <div className='lg:hidden flex gap-3 items-center'>
